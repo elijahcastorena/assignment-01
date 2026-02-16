@@ -10,7 +10,7 @@ You can:
 We worked on this as a group using GitHub. Each member used their own branch and merged their work into main.
 
 Our group members:
-- Aviyan Dhital – https://github.com/aviyannngit status
+- Aviyan Dhital – https://github.com/aviyannn
 - Elijah Castorena – https://github.com/elijahcastorena
 - Rafael Pasiona – https://github.com/rpasiona32
 ---
