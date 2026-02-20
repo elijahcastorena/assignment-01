@@ -26,3 +26,51 @@ public static void printInventory(String[] names, double[] prices, int[] stocks)
         }
     }
 }
+
+/** Prints Menu and calls functions according to user input. */
+public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    String[] itemNames = new String[10];
+    double[] itemPrices = new double[10];
+    int[] itemStocks = new int[10];
+
+
+    System.out.println("--- Grocery Management System Menu ---");
+    System.out.println("1. View");
+    System.out.println("2. Restock");
+    System.out.println("3. Exit");
+    System.out.print("Enter 1-3: ");
+    int choice = input.nextInt();
+    while (true) { 
+
+        while (choice > 3 || choice <= 0) {
+            System.out.println("New Input Required");
+            System.out.println("--- Grocery Management System Menu ---");
+            System.out.println("1. View");
+            System.out.println("2. Restock");
+            System.out.println("3. Exit");
+            System.out.print("Enter 1-3: ");
+            choice = input.nextInt();                
+        }
+
+        switch (choice) {
+            case 1:
+                printInventory(itemNames, itemPrices, itemStocks);
+                choice = 4;
+                break;
+            case 2:
+                input.nextLine();
+                System.out.print("Enter product to restock: ");
+                String target = input.nextLine();
+                System.out.print("Enter amount to restock: ");
+                int addedStock = input.nextInt();
+                restockItem(itemNames, itemStocks, target, addedStock);
+                choice = 4;
+                break;
+            case 3:
+                System.out.println("Exiting");
+                input.close();
+                return;
+        }
+    }
+}
